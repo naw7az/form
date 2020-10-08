@@ -9,7 +9,6 @@ app.use(bodyParser.json());
 app.use(cors());
 
 // create connection
-
 const db = mysql.createConnection({
   host: 'localhost',
   user: '<your root id>',
@@ -26,6 +25,7 @@ db.connect((err) => {
 
 // creating table
 let table = 'form'
+// Comment the next 5 line if table has already been created/present
 let myTable = `CREATE TABLE ${table}(id int AUTO_INCREMENT, name VARCHAR(100), email VARCHAR(100), password VARCHAR(250), PRIMARY KEY(id))`;
 db.query(myTable, (err, res) => {
   if(err) throw err;
