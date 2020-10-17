@@ -27,7 +27,7 @@ app.post('/', (req, res) => {
       password: hash
     })
   })
-  console.log('Info added to Database')
+  res.json('Data saved')
 })
 
 
